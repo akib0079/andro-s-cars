@@ -1,0 +1,63 @@
+.navbar {
+    background-color: #393943 !important;
+    max-height: 50px;
+    color: white !important;
+    margin-bottom: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(232, 232, 232) !important;
+}
+
+.logoImage{
+    width: 225px;
+}
+
+.logIn{
+    display: flex;
+    position: relative;
+}
+
+.logIn:before{
+    content: '';
+    height: 30px;
+    background-color: #39394323;
+    width: 2px;
+    margin: 0px 20px 0px -5px;
+}
+
+.logIn box-icon{
+    margin-right: 8px;
+    margin-top: 2px;
+}
+
+
+.logOut{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.logOut:before{
+    content: '';
+    height: 30px;
+    background-color: #39394323;
+    width: 2px;
+    margin: 0px 20px 0px -5px;
+}
+
+.logOut box-icon{
+    margin-right: 8px;
+    margin-top: 2px;
+}
