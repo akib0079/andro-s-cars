@@ -1,0 +1,116 @@
+.primaryBtn {
+    background-color: var(--mainColor);
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 20px;
+}
+
+.primaryBtn:hover {
+    background-color: var(--secondColor);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+
+.HeroSec {
+    padding: 170px 0px;
+    color: white;
+    background-size: contain;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.311), rgba(3, 3, 3, 0.371)), url('../../images/sample-1.png');
+}
+
+.HeroSec h1 {
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.308);
+    text-transform: uppercase;
+    font-size: 38px;
+}
+
+
+.bImg {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.bImg:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.brandsHeader {
+    color: #393943;
+    text-transform: uppercase;
+    font-weight: 700 !important;
+}
+
+.brands {
+    background-color: #F8F8F8;
+    padding: 100px 0px 140px 0px;
+}
+
+.aboutSec {
+    padding: 150px 0px;
+    background: url('../../images/brand-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.primaryBdg {
+    background-color: var(--mainColor);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.icns {
+    gap: 20px;
+}
+
+.icnAbout i {
+    font-size: 45px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    color: #393943;
+}
+
+.summary {
+    padding: 100px 0px;
+}
+
+.summaryInner {
+    padding: 30px 20px;
+    text-transform: uppercase;
+    background-color: #f8f8f879;
+    font-weight: 400 !important;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.summaries {
+    gap: 40px 70px;
+
+}
+
+.summaryInner i {
+    font-size: 45px;
+    color: var(--mainColor);
+}
+
+
+.Tools {
+    padding: 120px 0px;
+}

@@ -1,16 +1,23 @@
-.spinnerDiv{
+:root {
+    --mainColor: #EE3939;
+    --secondColor: #393943;
+}
+
+
+.spinnerDiv {
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.spinnerDiv .spinner{
+
+.spinnerDiv .spinner {
     height: 100px;
     width: 100px;
-    color: #ff7c67 !important;
+    color: var(--mainColor);
 }
 
-.page404{
+.page404 {
     min-height: 80vh;
 }
 
@@ -18,5 +25,7 @@
 /* Mobile Responsiveness */
 
 @media (max-width: 767px) {
-
-}  
+    .verify {
+        display: none !important;
+    }
+}

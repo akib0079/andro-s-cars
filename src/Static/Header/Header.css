@@ -1,8 +1,8 @@
 .navbar {
-    background-color: #393943 !important;
-    max-height: 50px;
+    background-color: #272727 !important;
     color: white !important;
-    margin-bottom: 20px;
+    padding: 10px 0px;
+    height: 50px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -10,9 +10,24 @@
     font-size: 15px;
     font-weight: 500;
     margin-right: 16px;
-    margin-top: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.extra-link {
+    color: white !important;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin: 0px 25px;
+}
+
+.allProduct {
+    min-height: 50px;
+    background-color: var(--mainColor);
+    min-width: 200px;
 }
 
 
@@ -20,44 +35,144 @@
     color: rgb(232, 232, 232) !important;
 }
 
-.logoImage{
-    width: 225px;
+.logoImg {
+    max-width: 225px;
 }
 
-.logIn{
+.logIn {
     display: flex;
     position: relative;
+    color: #272727;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-.logIn:before{
-    content: '';
-    height: 30px;
-    background-color: #39394323;
-    width: 2px;
-    margin: 0px 20px 0px -5px;
+.logIn:hover {
+    color: #474747;
 }
 
-.logIn box-icon{
+.logIn box-icon {
     margin-right: 8px;
     margin-top: 2px;
 }
 
 
-.logOut{
+.logOut {
     display: flex;
     position: relative;
     cursor: pointer;
+    color: #272727;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-.logOut:before{
-    content: '';
-    height: 30px;
-    background-color: #39394323;
-    width: 2px;
-    margin: 0px 20px 0px -5px;
-}
-
-.logOut box-icon{
+.logOut box-icon {
     margin-right: 8px;
     margin-top: 2px;
+}
+
+.icnBox {
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.142) 0px 1px 3px 0px, rgba(0, 0, 0, 0.128) 0px 1px 2px 0px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #272727bb;
+    font-weight: 400;
+}
+
+.icn i {
+    font-size: 30px;
+    color: #FF4545;
+}
+
+.phnNum {
+    font-weight: 600 !important;
+    color: #272727 !important;
+    font-size: 17px !important;
+}
+
+
+.user p {
+    color: rgba(255, 255, 255, 0.765);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 10px;
+}
+
+.dashBoard {
+    color: rgba(255, 255, 255, 0.765);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    margin: 0px 20px;
+    text-decoration: none;
+}
+
+.dashBoard:hover {
+    color: #f67e7e;
+}
+
+.dashBoard:before {
+    content: "";
+    height: 25px;
+    background-color: rgba(128, 128, 128, 0.584);
+    width: 2px;
+    position: absolute;
+    left: -15px;
+}
+
+
+.AboutBtn {
+    background-color: #EE3939;
+    color: white;
+    border: none;
+    padding: 20px 10px 0px 10px;
+}
+
+header {
+    position: relative;
+    background-color: white !important;
+}
+
+.navbar {
+    position: sticky !important;
+    width: 100%;
+    top: 0px;
+}
+
+
+
+@media (max-width: 767px) {
+    .icnBox {
+        display: none !important;
+    }
+
+    .mobile {
+        display: flex !important;
+    }
+
+    .logoImg {
+        max-width: 200px;
+    }
+
+    .navbar {
+        background-color: #272727 !important;
+        color: white !important;
+        padding: 10px 0px !important;
+        max-height: 100% !important;
+        padding: 10px;
+    }
+
+    .navbar-light .navbar-toggler {
+        color: rgb(245 245 245 / 55%) !important;
+        border-color: rgb(241 241 241 / 10%) !important;
+        background-color: white;
+        border-radius: 0px;
+    }
 }
