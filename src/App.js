@@ -12,6 +12,9 @@ import Register from './Pages/LogIn&Register/Register/Register';
 import Page404 from './Pages/Page404/Page404';
 import VerfPage from './Pages/VerfPage/VerfPage';
 import RequireAuth from './Pages/LogIn&Register/RequireAuth/RequireAuth';
+import Purchase from './Pages/Purchase/Purchase';
+import { ToastContainer } from 'react-toastify';
+
 
 
 function App() {
@@ -24,17 +27,17 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
 
-        {/* <Route path="/checkout/:serviceInfo" element={
+        <Route path="/purchase/:id" element={
           <RequireAuth>
-            <Checkout />
+            <Purchase></Purchase>
           </RequireAuth>
-        } /> */}
+        } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Page404 />} />
         <Route path="/verify" element={<VerfPage></VerfPage>} />
       </Routes>
-
+      <ToastContainer />
       <Footer></Footer>
     </div>
   );

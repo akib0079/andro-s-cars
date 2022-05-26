@@ -114,3 +114,13 @@ h6 {
 .Tools {
     padding: 120px 0px;
 }
+
+.singleCard:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.singleCard {
+    transition: 0.5s;
+}
