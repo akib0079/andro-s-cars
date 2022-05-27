@@ -6,6 +6,10 @@ import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateP
 import auth from '../../../firebase.init';
 import SocialLogIns from '../SocialLogIns/SocialLogIns';
 import LogInImg from '../../../images/brand-bg.png';
+import UserHook from '../../../Hooks/userHook';
+import { Spinner } from 'react-bootstrap';
+import { toast } from 'react-toastify';
+
 
 const Register = () => {
     const [c_error, setC_error] = useState();
@@ -18,7 +22,7 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     // Update user name.
     const [updateProfile, updating, errorProfile] = useUpdateProfile(auth);
-
+    const [token] = UserHook(user);
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -36,15 +40,22 @@ const Register = () => {
 
     }
 
-    if (user) {
+    if (updating) return (
+        <div className="spinnerDiv">
+            <Spinner className='spinner' animation="grow" />
+        </div>
+    );
+
+    if (token || user) {
         nav('/home');
-        console.log(user);
+        toast.success(`Verification Mail Sent`);
         setC_error('');
+        window.location.reload(false);
     }
 
-    if (!user?.emailVerified) {
-        nav('/verify');
-    }
+    // if (!user?.emailVerified) {
+    //     nav('/verify');
+    // }
 
     const navigateLogIn = () => {
         nav('/login');

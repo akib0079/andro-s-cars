@@ -68,17 +68,17 @@ const Header = () => {
                                 <Link className="nav-link" to={'/blog'}>Blog</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/blog'}>ALl Products</Link>
+                                <Link className="nav-link" to={'/tools'}>ALl tools</Link>
                             </li>
                             <li className="nav-item">
                                 {
                                     user && <>
-                                        <Link className="nav-link" to={'/add-packages'}>Dashboard</Link>
+                                        <Link className="nav-link" to={'/dashboard'}>Dashboard</Link>
                                     </>
                                 }
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/blog'}>About</Link>
+                                <Link className="nav-link" to={'/about'}>About</Link>
                             </li>
                         </ul>
 
@@ -88,7 +88,7 @@ const Header = () => {
                             user ?
                                 <div className="userDiv d-flex align-items-center">
                                     <p className='mb-0'>Welcome {user.displayName}</p>
-                                    <Link className="dashBoard d-lg-block d-none" to={'/add-packages'}>Dashboard</Link>
+                                    <Link className="dashBoard d-lg-block d-none" to={'/dashboard'}>Dashboard</Link>
                                 </div>
                                 :
                                 <p className='mb-0'>Welcome User</p>

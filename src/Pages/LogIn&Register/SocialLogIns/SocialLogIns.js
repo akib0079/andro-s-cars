@@ -2,7 +2,9 @@ import React from 'react';
 import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import UserHook from '../../../Hooks/userHook';
 import './SocialLogIn.css';
+
 
 const SocialLogIns = () => {
 
@@ -12,6 +14,8 @@ const SocialLogIns = () => {
     const location = useLocation();
     const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
+
+    const [token] = UserHook(userGoogle);
 
     if (userGoogle) {
         navigate(from, { replace: true });

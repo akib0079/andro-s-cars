@@ -15,6 +15,10 @@ import RequireAuth from './Pages/LogIn&Register/RequireAuth/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Myorder from './Pages/Dashboard/Myorder';
+import Profile from './Pages/Dashboard/Profile';
+import SubmitReview from './Pages/Dashboard/SubmitReview';
 
 
 
@@ -33,6 +37,19 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         } />
+
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route index element={<Profile></Profile>} />
+          <Route path="profile" element={<Profile></Profile>} />
+          <Route path="myorders" element={<Myorder />} />
+          <Route path="submitreview" element={<SubmitReview></SubmitReview>} />
+        </Route>
+
+        {/* <Routes path="/dashboard">
+          <Route index element={<Dashboard />} />
+          <Route path="myorders" element={<Myorder></Myorder>} />
+        </Routes> */}
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Page404 />} />

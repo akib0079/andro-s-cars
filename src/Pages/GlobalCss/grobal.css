@@ -21,6 +21,13 @@
     min-height: 80vh;
 }
 
+.AboutBtn {
+    background-color: #EE3939;
+    color: white;
+    border: none;
+    padding: 20px 10px 15px 10px !important;
+}
+
 
 /* Mobile Responsiveness */
 
