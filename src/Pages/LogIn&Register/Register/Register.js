@@ -5,6 +5,7 @@ import './Register.css';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogIns from '../SocialLogIns/SocialLogIns';
+import LogInImg from '../../../images/brand-bg.png';
 
 const Register = () => {
     const [c_error, setC_error] = useState();
@@ -58,6 +59,8 @@ const Register = () => {
                 <div className="container-fluid g-0">
                     <div className="row g-0 d-flex align-items-center">
                         <div className="col-md-5">
+                            <img className='logInImg' src={LogInImg} alt="" />
+
                         </div>
                         <div className="col-md-7">
                             <div className="loginInner">

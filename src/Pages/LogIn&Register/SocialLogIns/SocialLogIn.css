@@ -1,5 +1,5 @@
-.socialLogBtn{
-    background-color: #E8604C;
+.socialLogBtn {
+    background-color: #EE3939;
     border: none;
     padding: 10px 10px 5px 10px;
     border-radius: 50%;
@@ -7,7 +7,7 @@
     margin-top: 5px;
 }
 
-.p_socials{
+.p_socials {
     font-weight: 500;
     color: #393943;
 }

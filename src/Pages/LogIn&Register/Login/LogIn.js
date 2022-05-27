@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogIns from '../SocialLogIns/SocialLogIns';
 import './Login.css';
+import LogInImg from '../../../images/brand-bg.png';
 
 const LogIn = () => {
 
@@ -60,6 +61,7 @@ const LogIn = () => {
                 <div className="container-fluid g-0">
                     <div className="row g-0 d-flex align-items-center">
                         <div className="col-md-5">
+                            <img className='logInImg' src={LogInImg} alt="" />
                         </div>
                         <div className="col-md-7">
                             <div className="loginInner">

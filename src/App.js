@@ -14,6 +14,7 @@ import VerfPage from './Pages/VerfPage/VerfPage';
 import RequireAuth from './Pages/LogIn&Register/RequireAuth/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

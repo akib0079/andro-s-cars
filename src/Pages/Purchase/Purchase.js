@@ -4,13 +4,14 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import './Purchase.css';
 import { useForm } from 'react-hook-form';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 const Purchase = () => {
 
     const { id } = useParams();
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const [user, loading, User_error] = useAuthState(auth);
 
     const [tool, setTool] = useState([]);
 
@@ -19,6 +20,51 @@ const Purchase = () => {
             res.json()
         ).then(data => setTool(data))
     )
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        const { billing_name, email, phoneNum, quantity, Shipping_address } = data;
+
+        if (quantity > a_quantity) {
+            toast.error('Not Available', {
+                position: toast.POSITION.TOP_CENTER
+            });
+            return;
+        }
+        if (quantity < m_order) {
+            toast.error(`Minium Order ${m_order}`, {
+                position: toast.POSITION.TOP_CENTER
+            });
+            return;
+        }
+        const url = `https://warm-dusk-57859.herokuapp.com/orders`;
+
+        const orderDetails = {
+            billing_name: billing_name,
+            email: email,
+            phoneNum: phoneNum,
+            quantity: quantity,
+            shipping_address: Shipping_address,
+            product_name: tool.name,
+            price: tool.price,
+        }
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(orderDetails),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                toast.success(`${orderDetails.product_name} added`, {
+                    position: toast.POSITION.TOP_CENTER
+                });
+            })
+
+    };
+    console.log(errors);
 
     if (isLoading || tool.length === 0) return (
         <div className="spinnerDiv">
@@ -44,7 +90,10 @@ const Purchase = () => {
                         <div className="d-flex justify-content-between align-items-center">
                             <h4>Price Per Unit : ${price}</h4>
                             <p className='text-muted'>Available Unit : {a_quantity}</p>
+                            <p className='text-muted'>Min Order Count : {m_order}</p>
                         </div>
+
+
                         {/* Order form */}
 
                         <h4 className='form-group row gap-2 p-3'>Order Product</h4>
@@ -52,15 +101,18 @@ const Purchase = () => {
                         <form className='OrderForm pe-3 ps-3' onSubmit={handleSubmit(onSubmit)}>
                             <div className="row gap-2 ">
                                 {/* Name */}
-                                <input className='form-control col mb-3' required type="text" placeholder="Billing name" {...register("Billing name", { required: true, maxLength: 80 })} />
+                                <input value={user.displayName} readOnly className='form-control col mb-3' required type="text" placeholder="Billing name" {...register("billing_name", { required: true, maxLength: 80 })} />
                                 {/* Mail */}
-                                <input className='form-control col mb-3' required type="text" placeholder="Email" {...register("Email", { required: true, pattern: /^\S+@\S+$/i })} />
+                                <input value={user.email} readOnly className='form-control col mb-3' required type="text" placeholder="Email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
                             </div>
                             <div className="row gap-2 mb-3">
-                                <input className='form-control col' required type="tel" placeholder="Phone/Contact number" {...register("Phone/Contact number", { required: true, maxLength: 12 })} />
+                                <input className='form-control col' required type="tel" placeholder="Phone/Contact number" {...register("phoneNum", { required: true, maxLength: 12 })} />
                             </div>
                             <div className="row gap-2 mb-3">
-                                <textarea className='form-control col' required placeholder="Shipping address" {...register("Shipping Address", {})} />
+                                <input className='form-control col' required type="number" placeholder="Quantity" {...register("quantity", { required: true })} />
+                            </div>
+                            <div className="row gap-2 mb-3">
+                                <textarea className='form-control col' required placeholder="Shipping address" {...register("Shipping_address", {})} />
                             </div>
                             <div className="form-group row gap-2 mb-3">
                                 <input className='btn primaryBtn' value={"Place Order"} type="submit" />

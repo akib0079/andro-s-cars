@@ -7,15 +7,13 @@ import './SocialLogIn.css';
 const SocialLogIns = () => {
 
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
-    const [signInWithFacebook, userFacebook, loadingFacebook, errorFacebook] = useSignInWithFacebook(auth);
-
 
     // Redirecting to past page after logIn
     const location = useLocation();
     const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
 
-    if (userGoogle || userFacebook) {
+    if (userGoogle) {
         navigate(from, { replace: true });
     }
 
@@ -30,8 +28,6 @@ const SocialLogIns = () => {
             }
             {/* Google SignIn */}
             <button onClick={() => signInWithGoogle()} className='socialLogBtn'><box-icon name='google' type='logo' color='#fdfdfd' ></box-icon></button>
-            {/* Facebook SignIn */}
-            <button onClick={() => signInWithFacebook()} className='socialLogBtn'><box-icon name='facebook' type='logo' color='#fdfdfd' ></box-icon></button>
         </div>
     );
 };
