@@ -20,6 +20,10 @@ import Myorder from './Pages/Dashboard/Myorder';
 import Profile from './Pages/Dashboard/Profile';
 import SubmitReview from './Pages/Dashboard/SubmitReview';
 import Payment from './Pages/Dashboard/Payment';
+import AddTools from './Pages/Dashboard/AddTools';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import AllUsers from './Pages/Dashboard/AllUsers';
+import ManageProducrs from './Pages/Dashboard/ManageProducrs';
 
 
 
@@ -45,6 +49,10 @@ function App() {
           <Route path="myorders" element={<Myorder />} />
           <Route path="submitreview" element={<SubmitReview></SubmitReview>} />
           <Route path="myorders/payment/:id" element={<Payment></Payment>} />
+          <Route path="add-tools" element={<AddTools></AddTools>} />
+          <Route path="manage-orders" element={<ManageAllOrders></ManageAllOrders>} />
+          <Route path="manage-products" element={<ManageProducrs></ManageProducrs>} />
+          <Route path="users" element={<AllUsers></AllUsers>} />
         </Route>
 
         {/* <Routes path="/dashboard">

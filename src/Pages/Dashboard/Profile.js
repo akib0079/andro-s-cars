@@ -13,17 +13,12 @@ const Profile = () => {
 
 
     const [m_user, setM_user] = useState([]);
-    const { isLoading, Fetch_error, data } = useQuery('repoData', () =>
+    const { isLoading, Fetch_error, data, refetch } = useQuery('repoData', () =>
         fetch(`http://localhost:5000/user/?email=${user.email}`).then(res =>
             res.json()
         ).then(data => setM_user(data))
     )
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/user/?email=${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setM_user(data))
-    // }, []);
 
     if (isLoading) return (
         <div className="spinnerDiv">
@@ -60,7 +55,7 @@ const Profile = () => {
                 toast.success(`${user.displayName}'s Profile Updated.`, {
                     position: toast.POSITION.TOP_CENTER
                 });
-                window.location.reload(false);
+                refetch();
             })
     };
     console.log(errors);

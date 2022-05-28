@@ -8,7 +8,8 @@
     transform: translateX(0%) !important;
     background-color: var(--secondColor);
     color: white !important;
-    min-height: 75vh;
+    min-height: 100vh;
+    height: 100%;
 }
 
 .navButton {
