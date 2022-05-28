@@ -8,14 +8,10 @@ const UserHook = user => {
         const c_user = {
             displayName: name,
             email: email,
-            address: 'Not available',
-            city: 'Not available',
-            profession: 'Not available',
-            contact_number: 'Not available',
             photoUrl: user?.photoURL,
         };
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`http://localhost:5000/update-user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

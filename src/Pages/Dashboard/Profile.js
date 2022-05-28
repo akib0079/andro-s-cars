@@ -71,7 +71,7 @@ const Profile = () => {
             <h2>My Profile</h2>
             <hr />
             <h5 className='fw-normal'>Name : {user?.displayName}</h5>
-            <h5 className='fw-normal'>Mailing address : {m_user[0]?.email}</h5>
+            <h5 className='fw-normal'>Mailing address : {user?.email}</h5>
             <hr />
             <div className="d-flex align-items-center justify-content-between w-75">
                 <h5 className='fw-normal'>Address : {m_user[0]?.address}</h5>

@@ -37,7 +37,6 @@ const Register = () => {
         }
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-
     }
 
     if (updating) return (
@@ -48,8 +47,6 @@ const Register = () => {
 
     if (token || user) {
         nav('/home');
-        toast.success(`Verification Mail Sent`);
-        setC_error('');
         window.location.reload(false);
     }
 

@@ -8,22 +8,25 @@ import Partners from './Partners';
 import Tools from './Tools';
 import { Spinner } from 'react-bootstrap';
 import { useQuery } from 'react-query';
+import Review from './Review';
 
 
 const Home = () => {
 
     const [tools, setTools] = useState([]);
-    // const { isLoading, error, data } = useQuery('repoData', () =>
-    //     fetch('https://warm-dusk-57859.herokuapp.com/tools').then(res =>
-    //         res.json()
-    //     ).then(data => setTools(data))
-    // )
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         fetch('https://warm-dusk-57859.herokuapp.com/tools')
             .then(res => res.json())
             .then(data => setTools(data))
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, []);
 
     if (tools.length === 0) return (
         <div className="spinnerDiv">
@@ -43,7 +46,7 @@ const Home = () => {
 
                     <div className="row row-cols-1 row-cols-md-4 g-0">
                         {
-                            tools.map(tool => <Tools key={tool._id} info={tool}></Tools>)
+                            tools.slice(0).reverse().map(tool => <Tools key={tool._id} info={tool}></Tools>)
                         }
                     </div>
 
@@ -51,6 +54,21 @@ const Home = () => {
             </section >
 
             <SummarySec></SummarySec>
+
+            {/* Reviews section */}
+            < section className="reviewsSec" >
+                <div className="container">
+                    <h2 className='text-center mb-5 brandsHeader'>Reviews From Clients</h2>
+
+                    <div className="reviews text-center">
+                        {
+                            reviews.map(review => <Review key={review._id} info={review}></Review>)
+                        }
+                    </div>
+
+                </div>
+            </section >
+
             <Partners></Partners>
         </div >
     );

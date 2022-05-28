@@ -4,7 +4,7 @@ const SummarySec = () => {
     return (
         < section className="summary" >
             <div className="container">
-                <h2 className='text-center mb-5 brandsHeader'>Our Business Summary</h2>
+                <h2 className='text-center mb-5 brandsHeader text-light'>Our Business Summary</h2>
                 <div className="row text-center summaries">
                     <div className="col summaryInner">
                         <i className='bx bx-happy'></i>

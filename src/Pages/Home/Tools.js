@@ -13,7 +13,7 @@ const Tools = (props) => {
 
     return (
         <div className="card singleCard">
-            <img src={img} className="card-img-top" alt="..." />
+            <img src={img} className="card-img-top toolImg" alt="..." />
             <div className="card-body">
                 <h4 className="card-title">{name?.slice(0, 20)}</h4>
                 <p className="card-text mb-0">{desc.slice(0, 60)}...</p>

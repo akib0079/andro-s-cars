@@ -19,6 +19,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Myorder from './Pages/Dashboard/Myorder';
 import Profile from './Pages/Dashboard/Profile';
 import SubmitReview from './Pages/Dashboard/SubmitReview';
+import Payment from './Pages/Dashboard/Payment';
 
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="profile" element={<Profile></Profile>} />
           <Route path="myorders" element={<Myorder />} />
           <Route path="submitreview" element={<SubmitReview></SubmitReview>} />
+          <Route path="myorders/payment/:id" element={<Payment></Payment>} />
         </Route>
 
         {/* <Routes path="/dashboard">

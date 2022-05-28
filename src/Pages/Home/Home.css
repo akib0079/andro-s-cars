@@ -89,12 +89,15 @@ h6 {
 
 .summary {
     padding: 100px 0px;
+    background-size: cover;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.737), rgba(3, 3, 3, 0.337)), url('../../images/carmec1.jpg');
+    background-attachment: fixed;
 }
 
 .summaryInner {
     padding: 30px 20px;
     text-transform: uppercase;
-    background-color: #f8f8f879;
+    background-color: #f8f8f8fa;
     font-weight: 400 !important;
     border-radius: 10px;
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
@@ -102,7 +105,6 @@ h6 {
 
 .summaries {
     gap: 40px 70px;
-
 }
 
 .summaryInner i {
@@ -123,4 +125,37 @@ h6 {
 
 .singleCard {
     transition: 0.5s;
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 55px;
+}
+
+.reviewInner {
+    padding: 30px !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.reviewInner img {
+    width: 120px;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    border: 2px solid #CB653C;
+    object-fit: cover;
+}
+
+.stars box-icon {
+    fill: #CB653C;
+}
+
+.reviewsSec {
+    padding: 100px 0px;
+}
+
+.toolImg {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
 }
