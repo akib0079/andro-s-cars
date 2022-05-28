@@ -78,18 +78,18 @@ const Myorder = () => {
                                 </div>
                             </div>
                             {/* Delete modal. */}
-                            <div class="modal fade" id="exampleModal" tabIndex="-1" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Cancel This Order?</h5>
+                            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-hidden="true">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title" id="exampleModalLabel">Cancel This Order?</h5>
                                         </div>
-                                        <div class="modal-body">
+                                        <div className="modal-body">
                                             <p>Please hit confirm to delete or cancel the order.</p>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" onClick={() => deleteOrder(order._id)} class="btn btn-danger">Confirm</button>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" onClick={() => deleteOrder(order._id)} className="btn btn-danger">Confirm</button>
                                         </div>
                                     </div>
                                 </div>

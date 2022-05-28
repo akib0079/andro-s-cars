@@ -24,6 +24,7 @@ import AddTools from './Pages/Dashboard/AddTools';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import ManageProducrs from './Pages/Dashboard/ManageProducrs';
+import RequireAdmin from './Pages/LogIn&Register/RequireAdmin';
 
 
 
@@ -49,10 +50,10 @@ function App() {
           <Route path="myorders" element={<Myorder />} />
           <Route path="submitreview" element={<SubmitReview></SubmitReview>} />
           <Route path="myorders/payment/:id" element={<Payment></Payment>} />
-          <Route path="add-tools" element={<AddTools></AddTools>} />
-          <Route path="manage-orders" element={<ManageAllOrders></ManageAllOrders>} />
-          <Route path="manage-products" element={<ManageProducrs></ManageProducrs>} />
-          <Route path="users" element={<AllUsers></AllUsers>} />
+          <Route path="add-tools" element={<RequireAdmin><AddTools></AddTools></RequireAdmin>} />
+          <Route path="manage-orders" element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>} />
+          <Route path="manage-products" element={<RequireAdmin><ManageProducrs></ManageProducrs></RequireAdmin>} />
+          <Route path="users" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>} />
         </Route>
 
         {/* <Routes path="/dashboard">

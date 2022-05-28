@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
+import useAdmin from '../../Hooks/useAdmin';
 
 const AllUsers = () => {
+
+    const [user, loading, error] = useAuthState(auth);
+    const [admin] = useAdmin(user);
 
     const [users, setUsers] = useState([]);
     const { isLoading, Fetch_error, data, refetch } = useQuery('repoData', () =>
@@ -36,7 +42,7 @@ const AllUsers = () => {
         <div>
             <h2>All Users : {users.length}</h2>
 
-            <table class="table table-hover table-responsive">
+            <table className="table table-hover table-responsive">
                 <thead>
                     <tr>
                         <th scope="col">Serial</th>
@@ -47,7 +53,7 @@ const AllUsers = () => {
                 </thead>
                 <tbody>
                     {
-                        users.map((user, index) => <tr>
+                        users.map((user, index) => <tr key={user._id}>
                             <th scope="row">{index + 1}</th>
                             <td>{user.email}</td>
                             <td>{user?.displayName}</td>

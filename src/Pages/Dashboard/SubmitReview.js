@@ -60,7 +60,7 @@ const SubmitReview = () => {
                     <input className='form-control col' value={user.displayName} required type="text" readOnly placeholder="Rating" {...register("name", { required: true })} />
                 </div>
                 <div className="row gap-2 mb-3">
-                    <select class="form-select" required placeholder='Rating' {...register("rating", { required: true })}>
+                    <select className="form-select" required placeholder='Rating' {...register("rating", { required: true })}>
                         <option value="1" selected>Select Rating (1)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
