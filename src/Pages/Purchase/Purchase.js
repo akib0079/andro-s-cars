@@ -14,6 +14,7 @@ const Purchase = () => {
     const [user, loading, User_error] = useAuthState(auth);
 
     const [tool, setTool] = useState([]);
+    const { _id, name, price, img, a_quantity, desc, m_order } = tool;
 
     const { isLoading, error, data } = useQuery('repoData', () =>
         fetch(`https://warm-dusk-57859.herokuapp.com/tools/${id}`).then(res =>
@@ -25,13 +26,13 @@ const Purchase = () => {
     const onSubmit = data => {
         const { billing_name, email, phoneNum, quantity, Shipping_address } = data;
 
-        if (quantity > a_quantity) {
+        if (quantity > parseInt(a_quantity)) {
             toast.error('Not Available', {
                 position: toast.POSITION.TOP_CENTER
             });
             return;
         }
-        if (quantity < m_order) {
+        if (quantity < parseInt(m_order)) {
             toast.error(`Minium Order ${m_order}`, {
                 position: toast.POSITION.TOP_CENTER
             });
@@ -73,7 +74,6 @@ const Purchase = () => {
     );
 
     if (error) return 'An error has occurred: ' + error.message;
-    const { _id, name, price, img, a_quantity, desc, m_order } = tool;
 
 
     return (

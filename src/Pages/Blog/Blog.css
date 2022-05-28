@@ -1,0 +1,17 @@
+.blogHeader {
+    padding: 80px 0px;
+    background-color: #E8604C;
+    color: white;
+}
+
+.blogHeader .a_title {
+    color: white;
+    font-size: 40px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.374);
+}
+
+.ques {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 40px;
+    margin: 30px 0px;
+}

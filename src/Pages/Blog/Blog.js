@@ -19,22 +19,24 @@ const Blog = () => {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="ques">
-                                <h3>Difference between authorization and authentication?</h3>
-                                <p>The main difference between authentication and authorization is one is the process of verifying a user or someone and other one is the process what kind access does the verified user have. Morally Authentication is done before the authorization process. Common example of authentication is when we login to a specific website, on the other hand what kind of file or page access  the user would have is the process of authorization.</p>
+                                <h3>How will you improve the performance of a React Application ?</h3>
+                                <p>For good React application performance we should use low resolution image and optimize able css animations. Avoid unnecessary props rendering. All component handle locally if possible.We should pass only the relevant value to Main instead of the style object.Unlike the previous performance technique where refactoring our code gives us a performance boost, here we trade memory space for time. So, we must only memoize a component when necessary.</p>
                             </div>
                             <div className="ques">
-                                <h3> Why are you using firebase? What other options do you have to implement authentication?</h3>
-                                <p>One of most useful things in firebase is It makes the process of syncing data across Android ISO and Web much easier. Beside that it has the advantage of cloud server configuration.  It is much easier to implement third party provider like facebook and github. Beside firebase we have Auth0, Passport, Okta, Firebase etc as a authentication  alternative.</p>
+                                <h3> What are the different ways to manage a state in a React application ?</h3>
+                                <p>There is a many kind of ways to manage state in React application. For example (Local state ,Global state, Server state) URL state Local state is most often managed in React using the useState hook. Globaly state use when we need to update data in our application. the server state use when we integrated with from an external server. URL data hold all data over the url or pathname in our application.</p>
                             </div>
                             <div className="ques">
-                                <h3>What other services does firebase provide other than authentication?</h3>
-                                <p>Beside authentication firebase provides:</p>
-                                <ul>
-                                    <li>Cloud fire-store.</li>
-                                    <li>Cloud function.</li>
-                                    <li>Hosting.</li>
-                                    <li>Cloud messaging.</li>
-                                </ul>
+                                <h3>What is a unit test? Why should write unit tests ?</h3>
+                                <p>Unit testing is a way to check our code performance.The purpose is to validate that each unit of the software code performs as expected. Unit testing usually use a developer when applcation develop by user. When developer develop for a application section or a funciton for test. Unit Testing has tow types :
+                                    Manual
+                                    Automated</p>
+                            </div>
+                            <div className="ques">
+                                <h3>What is a unit test? Why should write unit tests ?</h3>
+                                <p>Unit testing is a way to check our code performance.The purpose is to validate that each unit of the software code performs as expected. Unit testing usually use a developer when applcation develop by user. When developer develop for a application section or a funciton for test. Unit Testing has tow types :
+                                    Manual
+                                    Automated</p>
                             </div>
                         </div>
                     </div>

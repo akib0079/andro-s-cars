@@ -65,6 +65,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Page404 />} />
         <Route path="/verify" element={<VerfPage></VerfPage>} />
+        <Route path="/portfolio" element={<VerfPage></VerfPage>} />
       </Routes>
       <ToastContainer />
       <Footer></Footer>
