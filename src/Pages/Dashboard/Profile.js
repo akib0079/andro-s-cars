@@ -14,7 +14,7 @@ const Profile = () => {
 
     const [m_user, setM_user] = useState([]);
     const { isLoading, Fetch_error, data, refetch } = useQuery('repoData', () =>
-        fetch(`http://localhost:5000/user/?email=${user.email}`).then(res =>
+        fetch(`https://warm-dusk-57859.herokuapp.com/user/?email=${user.email}`).then(res =>
             res.json()
         ).then(data => setM_user(data))
     )
@@ -31,7 +31,7 @@ const Profile = () => {
 
     const onSubmit = data => {
         const { photoUrl, city, phoneNum, profession, address } = data;
-        const url = `http://localhost:5000/update-user/${user.email}`;
+        const url = `https://warm-dusk-57859.herokuapp.com/update-user/${user.email}`;
 
         const userDetails = {
             address: address,

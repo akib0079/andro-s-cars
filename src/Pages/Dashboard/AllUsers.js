@@ -13,13 +13,13 @@ const AllUsers = () => {
 
     const [users, setUsers] = useState([]);
     const { isLoading, Fetch_error, data, refetch } = useQuery('repoData', () =>
-        fetch(`http://localhost:5000/users`).then(res =>
+        fetch(`https://warm-dusk-57859.herokuapp.com/users`).then(res =>
             res.json()
         ).then(data => setUsers(data))
     )
 
     const makeAdmin = (email) => {
-        fetch(`http://localhost:5000/admin/${email}`, {
+        fetch(`https://warm-dusk-57859.herokuapp.com/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

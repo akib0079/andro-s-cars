@@ -6,7 +6,7 @@ const AddTools = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/post-tool`, {
+        fetch(`https://warm-dusk-57859.herokuapp.com/post-tool`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

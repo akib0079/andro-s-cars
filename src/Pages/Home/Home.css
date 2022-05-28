@@ -159,3 +159,9 @@ h6 {
     height: 300px;
     width: 100%;
 }
+
+.portfolioSec {
+    background-color: rgb(246, 246, 246);
+    min-height: 80vh;
+    padding: 70px 0px;
+}

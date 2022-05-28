@@ -25,6 +25,7 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import ManageProducrs from './Pages/Dashboard/ManageProducrs';
 import RequireAdmin from './Pages/LogIn&Register/RequireAdmin';
+import Portfolio from './Pages/Portfolio';
 
 
 
@@ -65,7 +66,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Page404 />} />
         <Route path="/verify" element={<VerfPage></VerfPage>} />
-        <Route path="/portfolio" element={<VerfPage></VerfPage>} />
+        <Route path="/portfolio" element={<Portfolio></Portfolio>} />
       </Routes>
       <ToastContainer />
       <Footer></Footer>

@@ -33,10 +33,8 @@ const Blog = () => {
                                     Automated</p>
                             </div>
                             <div className="ques">
-                                <h3>What is a unit test? Why should write unit tests ?</h3>
-                                <p>Unit testing is a way to check our code performance.The purpose is to validate that each unit of the software code performs as expected. Unit testing usually use a developer when applcation develop by user. When developer develop for a application section or a funciton for test. Unit Testing has tow types :
-                                    Manual
-                                    Automated</p>
+                                <h3>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name ?</h3>
+                                <p>If i have an array of products. I can find prodcut by the product name. first i need to use JavaScript Array method of filter()all products. then each prodcut come and filtered by search keyword in product name. for doing this ,we need includes() funciton for finding the product by product name.</p>
                             </div>
                         </div>
                     </div>

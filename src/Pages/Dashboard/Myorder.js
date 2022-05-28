@@ -13,7 +13,7 @@ const Myorder = () => {
 
 
     const { isLoading, Fetch_error, data } = useQuery('repoData', () =>
-        fetch(`http://localhost:5000/order/?email=${user.email}`).then(res =>
+        fetch(`https://warm-dusk-57859.herokuapp.com/order/?email=${user.email}`).then(res =>
             res.json()
         ).then(data => setOrder(data))
     )
@@ -24,7 +24,7 @@ const Myorder = () => {
         nav(`payment/${id}`)
     }
     const deleteOrder = (id) => {
-        const url = `http://localhost:5000/delete-order/${id}`;
+        const url = `https://warm-dusk-57859.herokuapp.com/delete-order/${id}`;
         fetch(url, {
             method: 'DELETE',
         })

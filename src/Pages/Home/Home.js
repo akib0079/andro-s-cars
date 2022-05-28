@@ -23,7 +23,7 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://warm-dusk-57859.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
@@ -46,7 +46,7 @@ const Home = () => {
 
                     <div className="row row-cols-1 row-cols-md-4 g-0">
                         {
-                            tools.slice(0).reverse().map(tool => <Tools key={tool._id} info={tool}></Tools>)
+                            tools.slice(0, tools.length).reverse().map(tool => <Tools key={tool._id} info={tool}></Tools>)
                         }
                     </div>
 

@@ -12,7 +12,7 @@ const SubmitReview = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [m_user, setM_user] = useState([]);
     const { isLoading, Fetch_error, data } = useQuery('repoData', () =>
-        fetch(`http://localhost:5000/user/?email=${user.email}`).then(res =>
+        fetch(`https://warm-dusk-57859.herokuapp.com/user/?email=${user.email}`).then(res =>
             res.json()
         ).then(data => setM_user(data))
     )
@@ -25,7 +25,7 @@ const SubmitReview = () => {
             rating: rating,
             review_text: review_text,
         }
-        fetch(`http://localhost:5000/post-review`, {
+        fetch(`https://warm-dusk-57859.herokuapp.com/post-review`, {
             method: 'POST',
             body: JSON.stringify(review),
             headers: {

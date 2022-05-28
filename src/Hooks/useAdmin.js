@@ -5,7 +5,7 @@ const useAdmin = user => {
     const [adminLoading, setAdminLoading] = useState(true);
     useEffect(() => {
         const email = user.email;
-        fetch(`http://localhost:5000/user/?email=${email}`)
+        fetch(`https://warm-dusk-57859.herokuapp.com/user/?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 if (data[0].role === "admin") {

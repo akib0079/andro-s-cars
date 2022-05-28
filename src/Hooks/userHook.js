@@ -11,7 +11,7 @@ const UserHook = user => {
             photoUrl: user?.photoURL,
         };
         if (email) {
-            fetch(`http://localhost:5000/update-user/${email}`, {
+            fetch(`https://warm-dusk-57859.herokuapp.com/update-user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
